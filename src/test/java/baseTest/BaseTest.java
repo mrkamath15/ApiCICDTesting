@@ -11,8 +11,9 @@ public class BaseTest {
     private RequestSpecBuilder builder;
 
     public BaseTest() {
+        String baseURI = System.getProperty("appURL");
         builder = new RequestSpecBuilder();
-        builder.setBaseUri("https://reqres.in/");
+        builder.setBaseUri(baseURI);
         builder.setBasePath("api");
         builder.setContentType(ContentType.JSON);
         builder.log(LogDetail.URI);
